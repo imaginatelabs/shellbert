@@ -16,7 +16,7 @@ public final class OperatingSystemUtils {
             } else if (OS.indexOf("win") >= 0) {
                 cachedOperatingSystem = OperatingSystem.Windows;
             } else if (OS.indexOf("nux") >= 0) {
-                cachedOperatingSystem = OperatingSystem.Linux;
+                cachedOperatingSystem = OperatingSystem.Unix;
             } else {
                 cachedOperatingSystem = OperatingSystem.Other;
             }

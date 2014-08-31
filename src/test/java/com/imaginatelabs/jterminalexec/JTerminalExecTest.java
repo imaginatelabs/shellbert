@@ -21,7 +21,6 @@ public class JTerminalExecTest {
         Assert.assertFalse(results.stdOutContains("This Does Not Exist"));
     }
 
-
     @Test(groups = {TestUtils.INTEGRATION})
     public void shouldExecuteUsingObjectCommandLine() throws Exception {
         CommandLine commandLine = CommandLine.parse("pwd");
@@ -34,24 +33,23 @@ public class JTerminalExecTest {
     public void shouldExecuteMacOSXCommandUsingMultiPlatformCommandLine() throws Exception {
 
         Results results = JTerminalExec.exec(new MultiPlatformCommandLine(
-                new HashMap<OperatingSystem,CommandLine>(){{
-                    put(OperatingSystem.MacOSX,CommandLine.parse("pwd"));
-                    put(OperatingSystem.Windows,CommandLine.parse("pwd"));
-                }}
+            new HashMap<OperatingSystem,CommandLine>(){{
+                put(OperatingSystem.MacOSX,CommandLine.parse("pwd"));
+                put(OperatingSystem.Windows,CommandLine.parse("pwd"));
+            }}
         ));
 
         Assert.assertTrue(results.stdOutContains("JTerminalExec"));
     }
 
-
     @Test(groups = {TestUtils.INTEGRATION})
     public void shouldExecuteDefaultUsingMultiPlatformCommandLine() throws Exception {
 
         Results results = JTerminalExec.exec(new MultiPlatformCommandLine(
-                new HashMap<OperatingSystem,CommandLine>(){{
-                    put(OperatingSystem.Default,CommandLine.parse("pwd"));
-                    put(OperatingSystem.Windows,CommandLine.parse("pwd"));
-                }}
+            new HashMap<OperatingSystem,CommandLine>(){{
+                put(OperatingSystem.Default,CommandLine.parse("pwd"));
+                put(OperatingSystem.Windows,CommandLine.parse("pwd"));
+            }}
         ));
 
         Assert.assertTrue(results.stdOutContains("JTerminalExec"));
@@ -63,7 +61,6 @@ public class JTerminalExecTest {
         Assert.assertTrue(results.stdErrContains("No such file or directory"));
         Assert.assertEquals(results.getExitCode(), 1);
     }
-
 
     @Test(groups = {TestUtils.INTEGRATION})
     public void shouldReadStdAll() throws Exception {

@@ -26,7 +26,7 @@ public class Results {
     }
 
     public String stdOutToString(){
-        return stdOut.toString();
+        return stdOut.toString().trim();
     }
 
     public boolean stdOutMatches(String pattern, int flag){
@@ -46,7 +46,7 @@ public class Results {
     }
 
     public String stdErrToString(){
-        return stdErr.toString();
+        return stdErr.toString().trim();
     }
 
     public boolean stdErrMatches(String pattern, int flag){
@@ -62,7 +62,7 @@ public class Results {
     }
 
     public String stdToString(){
-        return stdOut.toString() +"\n" +stdErr.toString();
+        return (stdOut.toString().trim() +"\n" +stdErr.toString().trim()).trim();
     }
 
     public boolean stdMatches(String pattern, int flag){

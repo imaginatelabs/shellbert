@@ -68,4 +68,25 @@ public class JTerminalExecTest {
         Assert.assertTrue(results.stdContains("No such file or directory"));
         Assert.assertEquals(results.getExitCode(), 1);
     }
+
+    @Test(groups = {TestUtils.INTEGRATION})
+    public void shouldTrimStdOutToStringMethodsToHaveNoNewLineAtEnd() throws Exception {
+        Results results = JTerminalExec.exec(new MultiPlatformCommandLine(
+                new HashMap<OperatingSystem,CommandLine>(){{
+                    put(OperatingSystem.Default,CommandLine.parse("ping -c 4 127.0.0.1"));
+                    put(OperatingSystem.Windows,CommandLine.parse("ping 127.0.0.1"));
+                }}
+        ));
+        
+        Assert.assertFalse(Pattern.compile("\n$").matcher(results.stdToString()).find());
+        Assert.assertFalse(Pattern.compile("\n$").matcher(results.stdOutToString()).find());
+    }
+
+    @Test(groups = {TestUtils.INTEGRATION})
+    public void shouldTrimStdErrToStringMethodsToHaveNoNewLineAtEnd() throws Exception {
+        Results results = JTerminalExec.exec("ps foo");
+
+        Assert.assertFalse(Pattern.compile("\n$").matcher(results.stdToString()).find());
+        Assert.assertFalse(Pattern.compile("\n$").matcher(results.stdErrToString()).find());
+    }
 }

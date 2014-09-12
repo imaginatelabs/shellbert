@@ -1,4 +1,4 @@
-package com.imaginatelabs.jterminalexec;
+package com.imaginatelabs.shellbert;
 
 public class TestUtils {
     public static final String UNIX = "unix";

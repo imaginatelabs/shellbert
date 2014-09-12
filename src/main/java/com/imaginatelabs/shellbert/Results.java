@@ -1,4 +1,4 @@
-package com.imaginatelabs.jterminalexec;
+package com.imaginatelabs.shellbert;
 
 import org.codehaus.plexus.util.StringUtils;
 

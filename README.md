@@ -1,7 +1,11 @@
-JTerminalExec
+Shellbert
 =============
 
-Users can specify multi platform commands to be executed on respective operating systems. Exit code, stdout and stderr are encapsulated so that they can be used in the logic of an application.
+A library to run shell commands on the local operating system. 
+
+A command can be setup to run on multiple platforms so that it can handle OS variations in the command.
+
+The exit code, stdout and stderr are encapsulated so that they can be used in the logic of an application.
 
 
 ## Usage
@@ -9,11 +13,11 @@ Users can specify multi platform commands to be executed on respective operating
 Running a simple command in the most simplest form.
 
 ```java
-Results results   = JTerminalExec.exec("pwd");
+Results results   = Shellbert.run("pwd");
 
 int     exitCode  = results.getExitCode();                      // 0
-String  stdOut    = results.stdOutToString();                   // /Projects/JTerminalExec
-boolean hasString = results.stdOutContains("JTerminalExec");    // True
+String  stdOut    = results.stdOutToString();                   // /Projects/Shellbert
+boolean hasString = results.stdOutContains("Shellbert");    // True
 
 ```
 
@@ -23,11 +27,11 @@ For how to build CommandLine objects see the Apache Commons Exec [tutorial page]
 
 ```java
 CommandLine cl    = CommandLine.parse("pwd");
-Results results   = JTerminalExec.exec(cl);
+Results results   = Shellbert.run(cl);
 
 int     exitCode  = results.getExitCode();                      // 0
-String  stdOut    = results.stdOutToString();                   // /Projects/JTerminalExec
-boolean hasString = results.stdOutContains("JTerminalExec");    // True
+String  stdOut    = results.stdOutToString();                   // /Projects/Shellbert
+boolean hasString = results.stdOutContains("Shellbert");    // True
 
 ```
 
@@ -35,7 +39,7 @@ boolean hasString = results.stdOutContains("JTerminalExec");    // True
 Building and running a Mulit Platform command.
 
 ```java
-MultiPlatformCommandLine mpcl = JTerminalExec.exec(new MultiPlatformCommandLine(
+MultiPlatformCommandLine mpcl = new MultiPlatformCommandLine(
             new HashMap<OperatingSystem,CommandLine>(){{
                 put(OperatingSystem.Default,CommandLine.parse("ls"));
                 put(OperatingSystem.Unix,CommandLine.parse("ls"));
@@ -44,5 +48,5 @@ MultiPlatformCommandLine mpcl = JTerminalExec.exec(new MultiPlatformCommandLine(
                 put(OperatingSystem.Other,CommandLine.parse("ls"));
             }}
         ));
-Results results   = JTerminalExec.exec(mpcl);
+Results results   = Shellbert.run(mpcl);
 ```

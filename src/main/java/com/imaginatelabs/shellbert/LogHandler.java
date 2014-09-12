@@ -1,9 +1,8 @@
-package com.imaginatelabs.jterminalexec;
+package com.imaginatelabs.shellbert;
 
 import org.apache.commons.exec.LogOutputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.spi.LoggerFactoryBinder;
 
 
 public class LogHandler extends LogOutputStream {

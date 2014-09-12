@@ -1,4 +1,4 @@
-package com.imaginatelabs.jterminalexec;
+package com.imaginatelabs.shellbert;
 
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
@@ -7,12 +7,12 @@ import org.apache.commons.exec.PumpStreamHandler;
 
 import java.io.*;
 
-public class JTerminalExec {
-    public static Results exec(String line) throws IOException {
-        return JTerminalExec.exec(CommandLine.parse(line));
+public class Shellbert {
+    public static Results run(String line) throws IOException {
+        return Shellbert.run(CommandLine.parse(line));
     }
 
-    public static Results exec(CommandLine commandLine) throws IOException {
+    public static Results run(CommandLine commandLine) throws IOException {
 
         DefaultExecutor exec = new DefaultExecutor();
         ByteArrayOutputStream stdOut = new ByteArrayOutputStream();
@@ -27,7 +27,7 @@ public class JTerminalExec {
         return new Results(exitCode, stdOut, stdErr);
     }
 
-    public static Results exec(MultiPlatformCommandLine multiPlatformCommandLine) throws UnsupportedOperatingSystemException, IOException {
+    public static Results run(MultiPlatformCommandLine multiPlatformCommandLine) throws UnsupportedOperatingSystemException, IOException {
 
         OperatingSystem os = OperatingSystemUtils.detectOperatingSystem();
         CommandLine commandLine;
@@ -39,6 +39,6 @@ public class JTerminalExec {
             throw new UnsupportedOperatingSystemException();
         }
 
-        return JTerminalExec.exec(commandLine);
+        return Shellbert.run(commandLine);
     }
 }

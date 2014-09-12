@@ -1,7 +1,7 @@
 Shellbert
 =============
 
-A library to run shell commands on the local operating system. 
+A library to easily run and process shell commands on the local operating system. 
 
 A command can be setup to run on multiple platforms so that it can handle OS variations in the command.
 

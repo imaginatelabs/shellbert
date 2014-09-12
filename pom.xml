@@ -7,6 +7,22 @@
     <groupId>com.imaginatelabs</groupId>
     <artifactId>shellbert</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>Shellbert</name>
+    <description>A library to easily run and process shell commands on the local operating system.</description>
+    <packaging>jar</packaging>
+    <url>https://github.com/imaginatelabs/shellbert</url>
+
+    <scm>
+        <url>https://github.com/imaginatelabs/shellbert.git</url>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>GNU GENERAL PUBLIC LICENSE, Version 3</name>
+            <url>http://www.gnu.org/licenses/gpl.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <dependencies>
         <dependency>

@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Unit" verbose="1" >
+
+    <test name="Unit" >
+        <groups>
+            <run>
+                <exclude name="quarantined"/>
+                <exclude name="integration"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.imaginatelabs.shellbert.*"/>
+        </packages>
+    </test>
+
+</suite>

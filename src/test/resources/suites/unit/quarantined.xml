@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Quarantined" verbose="1" >
+
+    <test name="Quarantined" >
+        <groups>
+            <run>
+                <include name="quarantined" />
+            </run>
+        </groups>
+        <packages>
+            <package name="com.imaginatelabs.shellbert.*"/>
+        </packages>
+    </test>
+
+</suite>

@@ -17,7 +17,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Create a command line without any arguments.
      *
      * @param executable the executable
@@ -28,7 +28,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Create a command line without any arguments.
      *
      * @param executable the executable file
@@ -39,7 +39,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Copy constructor.
      *
      * @param other the instance to copy
@@ -50,7 +50,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Copy constructor.
      *
      * @param other the instance to copy
@@ -61,7 +61,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Create a command line from a string.
      *
      * @param line the first element becomes the executable, the rest the arguments
@@ -74,7 +74,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Create a command line from a string.
      *
      * @param line            the first element becomes the executable, the rest the arguments
@@ -88,7 +88,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Returns the executable.
      *
      * @return The executable
@@ -99,7 +99,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Was a file being used to set the executable?
      *
      * @return true if a file was used for setting the executable
@@ -110,7 +110,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Add multiple arguments. Handles parsing of quotes and whitespace.
      *
      * @param addArguments An array of arguments
@@ -122,7 +122,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Add multiple arguments.
      *
      * @param addArguments  An array of arguments
@@ -135,7 +135,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Add multiple arguments. Handles parsing of quotes and whitespace.
      * Please note that the parsing can have undesired side-effects therefore
      * it is recommended to build the command line incrementally.
@@ -149,7 +149,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Add multiple arguments. Handles parsing of quotes and whitespace.
      * Please note that the parsing can have undesired side-effects therefore
      * it is recommended to build the command line incrementally.
@@ -164,7 +164,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Add a single argument. Handles quoting.
      *
      * @param argument The argument to add
@@ -177,7 +177,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Add a single argument.
      *
      * @param argument      The argument to add
@@ -190,7 +190,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Returns the expanded and quoted command line arguments.
      *
      * @return The quoted arguments
@@ -210,7 +210,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Set the substitutionMap to expand variables in the
      * command line.
      *
@@ -222,7 +222,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Returns the command line as an array of strings.
      *
      * @return The command line as an string array
@@ -233,7 +233,7 @@ public class Cmd {
 
     /**
      * Specified in org.apache.commons.exec.CommandLine
-     * <p/>
+     *
      * Stringify operator returns the command line as a string.
      * Parameters are correctly quoted when containing a space or
      * left untouched if the are already quoted.

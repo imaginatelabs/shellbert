@@ -25,7 +25,7 @@ public class Std {
      * Exit code of the command line run.
      *
      * @return 0 - success.
-     * <p/>
+     *
      * !0 - failure.
      */
     public int getExitCode() {
@@ -64,7 +64,7 @@ public class Std {
      *                LITERAL,UNICODE_CHARACTER_CLASS
      *                and COMMENTS.
      * @return True - if there are one or more matches in out.
-     * <p/>
+     *
      * False - if there are no matches in out.
      */
     public boolean outMatches(String pattern, int flags) {
@@ -78,7 +78,7 @@ public class Std {
      *
      * @param pattern the expression to be compiled.
      * @return True - if there are one or more matches in out.
-     * <p/>
+     *
      * False - if there are no matches in out.
      */
     public boolean outMatches(String pattern) {
@@ -90,7 +90,7 @@ public class Std {
      *
      * @param searchString a non RegEx search string.
      * @return True - if there contains one or more searchString in out.
-     * <p/>
+     *
      * False - if there is no searchString in out.
      */
     public boolean outContains(String searchString) {
@@ -109,7 +109,7 @@ public class Std {
      *                LITERAL,UNICODE_CHARACTER_CLASS
      *                and COMMENTS.
      * @return True - if there are one or more matches in err
-     * <p/>
+     *
      * False - if there are no matches in err.
      */
     public boolean errMatches(String pattern, int flags) {
@@ -123,7 +123,7 @@ public class Std {
      *
      * @param pattern the expression to be compiled.
      * @return True - if there are one or more matches in err.
-     * <p/>
+     *
      * False -  if there are no matches in err.
      */
     public boolean errMatches(String pattern) {
@@ -135,7 +135,7 @@ public class Std {
      *
      * @param searchString a non RegEx search string.
      * @return True - if there contains one or more searchString in err.
-     * <p/>
+     *
      * False - if there is no searchString in err.
      */
     public boolean errContains(String searchString) {
@@ -154,7 +154,7 @@ public class Std {
      *                LITERAL,UNICODE_CHARACTER_CLASS
      *                and COMMENTS.
      * @return True - if there are one or more matches in out and err.
-     * <p/>
+     *
      * False - if there are no matches in out and err.
      */
     public boolean stdMatches(String pattern, int flags) {
@@ -168,7 +168,7 @@ public class Std {
      *
      * @param pattern the expression to be compiled.
      * @return True - if there are one or more matches in out and err.
-     * <p/>
+     *
      * False - if there are no matches in out and err.
      */
     public boolean stdMatches(String pattern) {
@@ -180,7 +180,7 @@ public class Std {
      *
      * @param searchString a non RegEx search string.
      * @return True - if there contains one or more searchString in out and err.
-     * <p/>
+     *
      * False - if there is no searchString in out and err.
      */
     public boolean contains(String searchString) {

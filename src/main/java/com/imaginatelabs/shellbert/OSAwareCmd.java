@@ -28,7 +28,7 @@ public class OSAwareCmd {
      *
      * @param OS operating system to check for.
      * @return True - if command exist for specified operating system.
-     * <p/>
+     *
      * False - if command doesn't exist for specified operating system.
      */
     public boolean hasSupportFor(OS OS) {

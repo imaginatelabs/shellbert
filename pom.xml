@@ -69,7 +69,6 @@
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
-
             <!-- Integration Testing -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -121,16 +120,14 @@
         <dependency>
             <groupId>org.codehaus.plexus</groupId>
             <artifactId>plexus-utils</artifactId>
-            <version>3.0.8</version>
+            <version>3.0.18</version>
         </dependency>
-
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.2</version>
+            <version>1.7.7</version>
         </dependency>
-
         <!-- Testing -->
         <dependency>
             <groupId>org.testng</groupId>

@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Wraps the api of org.apache.commons.exec.CommandLine to create and run rich commands.
  */
-public class Cmd{
+public class Cmd {
 
     private CommandLine commandLine;
 
@@ -26,6 +26,14 @@ public class Cmd{
 
     public Cmd(Cmd other) {
         commandLine = new CommandLine(other.getCommandLine());
+    }
+
+    public static Cmd parse(String line) {
+        return new Cmd(CommandLine.parse(line));
+    }
+
+    public static Cmd parse(String line, Map substitutionMap) {
+        return new Cmd(CommandLine.parse(line, substitutionMap));
     }
 
     public String getExecutable() {
@@ -78,14 +86,6 @@ public class Cmd{
 
     public String toString() {
         return commandLine.toString();
-    }
-
-    public static Cmd parse(String line){
-        return new Cmd(CommandLine.parse(line));
-    }
-
-    public static Cmd parse(String line, Map substitutionMap) {
-        return new Cmd(CommandLine.parse(line, substitutionMap));
     }
 
     public CommandLine getCommandLine() {

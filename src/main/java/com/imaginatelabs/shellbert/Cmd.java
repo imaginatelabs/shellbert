@@ -84,8 +84,8 @@ public class Cmd{
         return new Cmd(CommandLine.parse(line));
     }
 
-    public static Cmd parse(String line, Map substitutionMap){
-        return new Cmd(CommandLine.parse(line,substitutionMap));
+    public static Cmd parse(String line, Map substitutionMap) {
+        return new Cmd(CommandLine.parse(line, substitutionMap));
     }
 
     public CommandLine getCommandLine() {

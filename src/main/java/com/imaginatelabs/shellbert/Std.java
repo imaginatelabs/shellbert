@@ -23,9 +23,10 @@ public class Std {
 
     /**
      * Exit code of the command line run.
-     * @return 0 - success.
      *
-     *         !0 - failure.
+     * @return 0 - success.
+     * <p/>
+     * !0 - failure.
      */
     public int getExitCode() {
         return exitCode;
@@ -39,35 +40,34 @@ public class Std {
         return err;
     }
 
-    public String outToString(){
+    public String outToString() {
         return out.toString().trim();
     }
 
-    public String errToString(){
+    public String errToString() {
         return err.toString().trim();
     }
 
-    public String toString(){
-        return (out.toString().trim() +"\n" + err.toString().trim()).trim();
+    public String toString() {
+        return (out.toString().trim() + "\n" + err.toString().trim()).trim();
     }
 
     /**
      * Match a RegEx to the out by wrapping
      * java.util.regex.Pattern.compile(...).matcher(...).find().
-     * @param pattern
-     *         the expression to be compiled.
-     * @param  flags
-     *         From java.util.regex.Pattern
-     *         Match flags, a bit mask that may include
-     *         CASE_INSENSITIVE, MULTILINE, DOTALL,
-     *         UNICODE_CASE, CANON_EQ, UNIX_LINES,
-     *         LITERAL,UNICODE_CHARACTER_CLASS
-     *         and COMMENTS.
-     * @return True - if there are one or more matches in out.
      *
-     *         False - if there are no matches in out.
+     * @param pattern the expression to be compiled.
+     * @param flags   From java.util.regex.Pattern
+     *                Match flags, a bit mask that may include
+     *                CASE_INSENSITIVE, MULTILINE, DOTALL,
+     *                UNICODE_CASE, CANON_EQ, UNIX_LINES,
+     *                LITERAL,UNICODE_CHARACTER_CLASS
+     *                and COMMENTS.
+     * @return True - if there are one or more matches in out.
+     * <p/>
+     * False - if there are no matches in out.
      */
-    public boolean outMatches(String pattern, int flags){
+    public boolean outMatches(String pattern, int flags) {
         return Pattern.compile(pattern, flags).matcher(out.toString()).find();
     }
 
@@ -75,23 +75,23 @@ public class Std {
      * Match a RegEx to the out by wrapping
      * outMatches and passed flag DOTALL so that
      * all characters including new lines can be matched.
-     * @param pattern
-     *        the expression to be compiled.
-     * @return True - if there are one or more matches in out.
      *
-     *         False - if there are no matches in out.
+     * @param pattern the expression to be compiled.
+     * @return True - if there are one or more matches in out.
+     * <p/>
+     * False - if there are no matches in out.
      */
-    public boolean outMatches(String pattern){
+    public boolean outMatches(String pattern) {
         return outMatches(pattern, Pattern.DOTALL);
     }
 
     /**
      * Search for a string in the out.
-     * @param searchString
-     *          a non RegEx search string.
-     * @return True - if there contains one or more searchString in out.
      *
-     *         False - if there is no searchString in out.
+     * @param searchString a non RegEx search string.
+     * @return True - if there contains one or more searchString in out.
+     * <p/>
+     * False - if there is no searchString in out.
      */
     public boolean outContains(String searchString) {
         return StringUtils.contains(out.toString(), searchString);
@@ -100,20 +100,19 @@ public class Std {
     /**
      * Match a RegEx to the err by wrapping
      * java.util.regex.Pattern.compile(...).matcher(...).find().
-     * @param pattern
-     *         the expression to be compiled.
-     * @param  flags
-     *         From java.util.regex.Pattern
-     *         Match flags, a bit mask that may include
-     *         CASE_INSENSITIVE, MULTILINE, DOTALL,
-     *         UNICODE_CASE, CANON_EQ, UNIX_LINES,
-     *         LITERAL,UNICODE_CHARACTER_CLASS
-     *         and COMMENTS.
-     * @return True - if there are one or more matches in err
      *
-     *         False - if there are no matches in err.
+     * @param pattern the expression to be compiled.
+     * @param flags   From java.util.regex.Pattern
+     *                Match flags, a bit mask that may include
+     *                CASE_INSENSITIVE, MULTILINE, DOTALL,
+     *                UNICODE_CASE, CANON_EQ, UNIX_LINES,
+     *                LITERAL,UNICODE_CHARACTER_CLASS
+     *                and COMMENTS.
+     * @return True - if there are one or more matches in err
+     * <p/>
+     * False - if there are no matches in err.
      */
-    public boolean errMatches(String pattern, int flags){
+    public boolean errMatches(String pattern, int flags) {
         return Pattern.compile(pattern, flags).matcher(err.toString()).find();
     }
 
@@ -121,23 +120,23 @@ public class Std {
      * Match a RegEx to the err by wrapping
      * errMatches and passed flag DOTALL so that
      * all characters including new lines can be matched.
-     * @param pattern
-     *        the expression to be compiled.
-     * @return True - if there are one or more matches in err.
      *
-     *         False -  if there are no matches in err.
+     * @param pattern the expression to be compiled.
+     * @return True - if there are one or more matches in err.
+     * <p/>
+     * False -  if there are no matches in err.
      */
-    public boolean errMatches(String pattern){
+    public boolean errMatches(String pattern) {
         return errMatches(pattern, Pattern.DOTALL);
     }
 
     /**
      * Search for a string in the err.
-     * @param searchString
-     *          a non RegEx search string.
-     * @return True - if there contains one or more searchString in err.
      *
-     *         False - if there is no searchString in err.
+     * @param searchString a non RegEx search string.
+     * @return True - if there contains one or more searchString in err.
+     * <p/>
+     * False - if there is no searchString in err.
      */
     public boolean errContains(String searchString) {
         return StringUtils.contains(err.toString(), searchString);
@@ -146,20 +145,19 @@ public class Std {
     /**
      * Match a RegEx to the out and err by wrapping
      * java.util.regex.Pattern.compile(...).matcher(...).find().
-     * @param pattern
-     *         the expression to be compiled.
-     * @param  flags
-     *         From java.util.regex.Pattern
-     *         Match flags, a bit mask that may include
-     *         CASE_INSENSITIVE, MULTILINE, DOTALL,
-     *         UNICODE_CASE, CANON_EQ, UNIX_LINES,
-     *         LITERAL,UNICODE_CHARACTER_CLASS
-     *         and COMMENTS.
-     * @return True - if there are one or more matches in out and err.
      *
-     *         False - if there are no matches in out and err.
+     * @param pattern the expression to be compiled.
+     * @param flags   From java.util.regex.Pattern
+     *                Match flags, a bit mask that may include
+     *                CASE_INSENSITIVE, MULTILINE, DOTALL,
+     *                UNICODE_CASE, CANON_EQ, UNIX_LINES,
+     *                LITERAL,UNICODE_CHARACTER_CLASS
+     *                and COMMENTS.
+     * @return True - if there are one or more matches in out and err.
+     * <p/>
+     * False - if there are no matches in out and err.
      */
-    public boolean stdMatches(String pattern, int flags){
+    public boolean stdMatches(String pattern, int flags) {
         return outMatches(pattern, flags) || errMatches(pattern, flags);
     }
 
@@ -167,23 +165,23 @@ public class Std {
      * Match a RegEx to the out and err by wrapping
      * stdMatches and passed flag DOTALL so that
      * all characters including new lines can be matched.
-     * @param pattern
-     *        the expression to be compiled.
-     * @return True - if there are one or more matches in out and err.
      *
-     *         False - if there are no matches in out and err.
+     * @param pattern the expression to be compiled.
+     * @return True - if there are one or more matches in out and err.
+     * <p/>
+     * False - if there are no matches in out and err.
      */
-    public boolean stdMatches(String pattern){
+    public boolean stdMatches(String pattern) {
         return outMatches(pattern) || errMatches(pattern);
     }
 
     /**
      * Search for a string in the out and err.
-     * @param searchString
-     *          a non RegEx search string.
-     * @return True - if there contains one or more searchString in out and err.
      *
-     *         False - if there is no searchString in out and err.
+     * @param searchString a non RegEx search string.
+     * @return True - if there contains one or more searchString in out and err.
+     * <p/>
+     * False - if there is no searchString in out and err.
      */
     public boolean contains(String searchString) {
         return outContains(searchString) || errContains(searchString);

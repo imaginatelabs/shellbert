@@ -22,7 +22,7 @@ public class OSCmd {
 
     public OSCmd(OS os, String line, Map substitutionMap) {
         this.os = os;
-        this.cmd = Cmd.parse(line,substitutionMap);
+        this.cmd = Cmd.parse(line, substitutionMap);
     }
 
     public OS getOs() {

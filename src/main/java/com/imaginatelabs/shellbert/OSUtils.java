@@ -11,6 +11,7 @@ public final class OSUtils {
 
     /**
      * Detects the operating system, caching the results for subsequent look-ups.
+     *
      * @return OperatingSystem - an enum representation (Windows, MacOSX, Unix, Solaris, Other) detected at runtime.
      */
     public static OS detectOS() {
